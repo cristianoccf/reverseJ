@@ -32,3 +32,7 @@ jobs:
       with:
         name: Package
         path: staging
+  
+    - uses: mikepenz/action-junit-report@v4
+      with:
+        report_paths: '**/build/test-results/test/TEST-*.xml'
