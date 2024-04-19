@@ -33,6 +33,9 @@ jobs:
         name: Package
         path: staging
   
-    - uses: mikepenz/action-junit-report@v4
+    - name: Upload test results
+    - uses: actions/upload-artifact@v2
       with:
-        report_paths: '**/build/test-results/test/TEST-*.xml'
+        name: test-results
+        path: |
+          ${{ github.workspace }}/files/*
